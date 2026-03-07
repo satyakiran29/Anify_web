@@ -83,12 +83,12 @@ If you run into any issues, have questions, or want to discuss the project, reac
 - **Telegram Community**: [Join here](https://t.me/skdev29)
 - **Discord Server**: Join our Discord for real-time support
 
-- **Instagram**: [@AnifyWeb](https://instagram.com/skdev29)
+- **Instagram**: [@skdev29](https://instagram.com/skdev29)
 
 ## 🧑‍💻 Maintainers & Contributing
 
 **Anify Web** is created and maintained by:
-- **Satya Kiran (SkDev)** - [Developer Portfolio](https://psatyakiran.in) | [SK Dev Studio](https://aniset.vercel.app)
+- **Satya Kiran (SkDev)** - [Developer Portfolio](https://psatyakiran.in) | [SK Dev Studio](https://skdev.vercel.app)
 
 ### Contributing
 
