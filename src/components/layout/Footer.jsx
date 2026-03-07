@@ -61,7 +61,7 @@ const Footer = () => {
                 <div>&copy; {new Date().getFullYear()} Anify Widgets. All rights reserved.</div>
                 <div style={{ display: 'flex', gap: '24px' }}>
                     <span>Designed by Satya Kiran (SkDev)</span>
-                    <span>For Android Themes</span>
+                    <span>For Android Widgets</span>
                 </div>
             </div>
 
