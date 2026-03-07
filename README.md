@@ -80,10 +80,10 @@ src/
 
 If you run into any issues, have questions, or want to discuss the project, reach out to our community:
 
-- **Telegram Community**: [Join here](https://t.me/AnifyWeb)
+- **Telegram Community**: [Join here](https://t.me/skdev29)
 - **Discord Server**: Join our Discord for real-time support
-- **Twitter / X**: [@AnifyWeb](https://twitter.com/AnifyWeb)
-- **Instagram**: [@AnifyWeb](https://instagram.com/AnifyWeb)
+
+- **Instagram**: [@AnifyWeb](https://instagram.com/skdev29)
 
 ## 🧑‍💻 Maintainers & Contributing
 
