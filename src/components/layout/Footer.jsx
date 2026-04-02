@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
     return (
@@ -32,7 +33,7 @@ const Footer = () => {
                 <div>
                     <h4 style={{ marginBottom: '24px', fontSize: '0.9rem', color: 'var(--text-primary)', letterSpacing: '1px' }}>LEGAL</h4>
                     <ul className="footer-links" style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                        <li><a href="#">Privacy Policy</a></li>
+                        <li><Link to="/privacy-policy">Privacy Policy</Link></li>
                         <li><a href="#">Terms of Service</a></li>
                         <li><a href="#">Support Center</a></li>
                     </ul>
