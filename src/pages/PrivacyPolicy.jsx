@@ -42,7 +42,6 @@ const PrivacyPolicy = () => {
             <ul style={{ marginLeft: '24px', marginTop: '8px', listStyleType: 'circle' }}>
               <li style={{ marginBottom: '4px' }}>Uninstalling the Anify app.</li>
               <li style={{ marginBottom: '4px' }}>Clearing the app's data and cache in your Android device settings.</li>
-              <li style={{ marginBottom: '4px' }}>Resetting or deleting your advertising ID in your Android device's Google settings.</li>
             </ul>
           </li>
           <li style={{ marginBottom: '8px' }}>If you have specific requests regarding your data, you can contact us directly via the email provided below.</li>
