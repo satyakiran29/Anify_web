@@ -6,7 +6,7 @@ const PrivacyPolicy = () => {
     <div style={{ maxWidth: '800px', margin: '140px auto 100px', padding: '0 24px', color: 'var(--text-primary)', lineHeight: '1.8' }}>
       <h1 style={{ fontSize: '2.5rem', marginBottom: '24px', color: 'var(--accent-color)', letterSpacing: '-1px' }}>Privacy Policy for Anify</h1>
       <p style={{ color: 'var(--text-secondary)' }}><strong>Effective Date:</strong> {new Date().toLocaleDateString()}</p>
-      
+
       <div style={{ marginTop: '40px' }} className="policy-content">
         <p style={{ marginBottom: '20px' }}>
           Thank you for choosing <strong>Anify</strong>, the ultimate personalization app for Android. We respect your privacy and are committed to protecting it through our compliance with this privacy policy.
@@ -33,13 +33,28 @@ const PrivacyPolicy = () => {
         <h2 style={{ fontSize: '1.6rem', marginTop: '40px', marginBottom: '20px', fontWeight: '600' }}>4. Permissions Used by Anify</h2>
         <p style={{ marginBottom: '20px' }}>Anify requires certain device permissions to function correctly (such as saving wallpapers or modifying system settings for ringtones). We only use these permissions to provide the requested features and do not use them to collect personal data without your explicit action.</p>
 
-        <h2 style={{ fontSize: '1.6rem', marginTop: '40px', marginBottom: '20px', fontWeight: '600' }}>5. Changes to This Privacy Policy</h2>
+        {/* NEW SECTION ADDED HERE */}
+        <h2 style={{ fontSize: '1.6rem', marginTop: '40px', marginBottom: '20px', fontWeight: '600' }}>5. Data Retention and Deletion</h2>
+        <p style={{ marginBottom: '16px' }}>We are committed to giving you control over your data. Here is how we handle data retention and deletion:</p>
+        <ul style={{ marginLeft: '24px', marginBottom: '24px', color: 'var(--text-secondary)' }}>
+          <li style={{ marginBottom: '8px' }}><strong>Data Retention:</strong> We retain anonymous usage data and device identifiers only for as long as necessary to provide our services, maintain app performance, and serve relevant ads. This is generally for the duration you have the app installed on your device.</li>
+          <li style={{ marginBottom: '8px' }}><strong>Data Deletion:</strong> Because Anify does not require a user account, the data collected is tied to your device and its advertising ID. You can effectively delete this data at any time by:
+            <ul style={{ marginLeft: '24px', marginTop: '8px', listStyleType: 'circle' }}>
+              <li style={{ marginBottom: '4px' }}>Uninstalling the Anify app.</li>
+              <li style={{ marginBottom: '4px' }}>Clearing the app's data and cache in your Android device settings.</li>
+              <li style={{ marginBottom: '4px' }}>Resetting or deleting your advertising ID in your Android device's Google settings.</li>
+            </ul>
+          </li>
+          <li style={{ marginBottom: '8px' }}>If you have specific requests regarding your data, you can contact us directly via the email provided below.</li>
+        </ul>
+
+        <h2 style={{ fontSize: '1.6rem', marginTop: '40px', marginBottom: '20px', fontWeight: '600' }}>6. Changes to This Privacy Policy</h2>
         <p style={{ marginBottom: '20px' }}>We may update our Privacy Policy from time to time as we add fresh content and regular updates. We will notify you of any changes by updating the effective date on this page.</p>
 
-        <h2 style={{ fontSize: '1.6rem', marginTop: '40px', marginBottom: '20px', fontWeight: '600' }}>6. Contact Us</h2>
+        <h2 style={{ fontSize: '1.6rem', marginTop: '40px', marginBottom: '20px', fontWeight: '600' }}>7. Contact Us</h2>
         <p style={{ marginBottom: '20px' }}>If you have any questions or suggestions about our Privacy Policy, please contact us at <a href="mailto:satyakiran296@gmail.com" style={{ color: 'var(--accent-color)', textDecoration: 'none' }}>satyakiran296@gmail.com</a>.</p>
       </div>
-      
+
       <div style={{ marginTop: '64px', paddingTop: '32px', borderTop: '1px solid var(--glass-border)' }}>
         <Link to="/" style={{ color: 'var(--text-primary)', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px', transition: 'color 0.2s', fontWeight: '500' }} onMouseOver={(e) => e.target.style.color = 'var(--accent-color)'} onMouseOut={(e) => e.target.style.color = 'var(--text-primary)'}>
           &larr; Back to Home
