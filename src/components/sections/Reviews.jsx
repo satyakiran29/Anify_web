@@ -1,4 +1,5 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 
 const Reviews = () => {
     const reviews = [
@@ -23,8 +24,14 @@ const Reviews = () => {
     ]
 
     return (
-        <section id="reviews" className="animate-fade-in" style={{ padding: '100px 24px', position: 'relative' }}>
-            <div style={{ textAlign: 'center', marginBottom: '80px', position: 'relative', zIndex: 1 }}>
+        <section id="reviews" style={{ padding: '100px 24px', position: 'relative' }}>
+            <motion.div 
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.6 }}
+                style={{ textAlign: 'center', marginBottom: '80px', position: 'relative', zIndex: 1 }}
+            >
                 <h2 style={{ fontSize: 'clamp(2.5rem, 8vw, 4rem)', marginBottom: '20px' }}>USER REVIEWS</h2>
                 <div style={{
                     width: '60px',
@@ -34,7 +41,7 @@ const Reviews = () => {
                     borderRadius: '2px',
                     boxShadow: '0 0 15px var(--accent-glow)'
                 }}></div>
-            </div>
+            </motion.div>
 
             <div style={{
                 display: 'grid',
@@ -46,7 +53,14 @@ const Reviews = () => {
                 zIndex: 1
             }}>
                 {reviews.map((r, i) => (
-                    <div key={i} className="glass-card review-card" style={{
+                    <motion.div 
+                        key={i} 
+                        initial={{ opacity: 0, y: 40 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, margin: "-50px" }}
+                        transition={{ duration: 0.5, delay: i * 0.15 }}
+                        className="glass-card review-card" 
+                        style={{
                         display: 'flex',
                         flexDirection: 'column',
                         gap: '20px',
@@ -67,7 +81,7 @@ const Reviews = () => {
                             <h4 style={{ fontSize: '1.1rem', color: 'var(--text-primary)', marginBottom: '4px', letterSpacing: '0.5px' }}>{r.name}</h4>
                             <span style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', fontFamily: 'Geist Mono, monospace' }}>{r.role}</span>
                         </div>
-                    </div>
+                    </motion.div>
                 ))}
             </div>
 

@@ -4,77 +4,83 @@ import { Link } from 'react-router-dom'
 const Footer = () => {
     return (
         <footer style={{
-            padding: '100px 24px 40px',
-            borderTop: '1px solid var(--glass-border)',
-            background: 'linear-gradient(to top, rgba(255,80,0,0.05) 0%, transparent 100%)'
+            background: '#040405',
+            borderTop: '1px solid rgba(255,255,255,0.05)',
+            padding: '40px 24px',
+            position: 'relative'
         }}>
             <div style={{
                 maxWidth: '1200px',
                 margin: '0 auto',
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-                gap: '64px',
-                textAlign: 'left'
-            }}>
-                <div>
-                    <h3 style={{ marginBottom: '24px', fontSize: '1.8rem', letterSpacing: '-1.5px' }}>ANIFY<span style={{ color: 'var(--accent-color)' }}>.</span></h3>
-                    <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: 1.8, maxWidth: '300px' }}>
-                        A passion project dedicated to minimalist design and beautifully crafted aesthetics on Android.
-                    </p>
-                </div>
-                {/* <div id="community">
-                    <h4 style={{ marginBottom: '24px', fontSize: '0.9rem', color: 'var(--text-primary)', letterSpacing: '1px' }}>COMMUNITY</h4>
-                    <ul className="footer-links" style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                        <li><a href="https://t.me/AnifyWeb" target="_blank" rel="noopener noreferrer">Telegram Community</a></li>
-                        <li><a href="https://discord.gg/" target="_blank" rel="noopener noreferrer">Discord Server</a></li>
-                        <li><a href="https://instagram.com/AnifyWeb" target="_blank" rel="noopener noreferrer">Instagram Updates</a></li>
-                    </ul>
-                </div> */}
-                <div>
-                    <h4 style={{ marginBottom: '24px', fontSize: '0.9rem', color: 'var(--text-primary)', letterSpacing: '1px' }}>LEGAL</h4>
-                    <ul className="footer-links" style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                        <li><Link to="/privacy-policy">Privacy Policy</Link></li>
-                        <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">Support Center</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 style={{ marginBottom: '24px', fontSize: '0.9rem', color: 'var(--text-primary)', letterSpacing: '1px' }}>DEVELOPER</h4>
-                    <ul className="footer-links" style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                        <li><a href="https://psatyakiran.in" target="_blank" rel="noopener noreferrer">Developer Portfolio</a></li>
-                        <li><a href="https://skdev.vercel.app" target="_blank" rel="noopener noreferrer">SK Dev Studio</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div style={{
-                maxWidth: '1200px',
-                margin: '80px auto 0',
-                paddingTop: '40px',
-                borderTop: '1px solid rgba(255,255,255,0.05)',
                 display: 'flex',
-                justifyContent: 'space-between',
-                flexWrap: 'wrap',
-                gap: '20px',
-                color: 'var(--text-secondary)',
-                fontSize: '0.85rem'
+                flexDirection: 'column',
+                gap: '24px',
+                alignItems: 'center'
             }}>
-                <div>&copy; {new Date().getFullYear()} Anify Widgets. All rights reserved.</div>
-                <div style={{ display: 'flex', gap: '24px' }}>
-                    <span>Designed by Satya Kiran (SkDev)</span>
-                    <span>For Android Widgets</span>
+                {/* Brand and Logo */}
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                    <img 
+                        src="https://play-lh.googleusercontent.com/jx1tzenU6YSJJuW8we6lg-0qqgjv9v-UnH6wBPyY1qXlqNRgzaoZGAaflLcaXMV7APcLRlhH6nz3g9BCf8idlKA=w240-h480-rw" 
+                        alt="Anify Logo" 
+                        style={{
+                            width: '32px',
+                            height: '32px',
+                            borderRadius: '8px',
+                            objectFit: 'cover'
+                        }} 
+                    />
+                    <span style={{ 
+                        fontSize: '1.2rem', 
+                        color: '#fff', 
+                        fontFamily: 'Inter, serif', 
+                        fontWeight: 800
+                    }}>
+                        Anify
+                    </span>
+                </div>
+
+                {/* Links */}
+                <div className="footer-links" style={{
+                    display: 'flex',
+                    gap: '24px',
+                    flexWrap: 'wrap',
+                    justifyContent: 'center',
+                    fontFamily: 'Inter, sans-serif'
+                }}>
+                    <Link to="/privacy-policy">Privacy Policy</Link>
+                    <a href="#">Terms of Service</a>
+                    <a href="https://t.me/AnifyWeb" target="_blank" rel="noopener noreferrer">Telegram</a>
+                    <a href="https://instagram.com/AnifyWeb" target="_blank" rel="noopener noreferrer">Instagram</a>
+                </div>
+
+                {/* Copyright & Bottom Bar */}
+                <div style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    gap: '8px',
+                    color: '#64748b',
+                    fontSize: '0.85rem',
+                    fontFamily: 'Inter, sans-serif',
+                    marginTop: '8px'
+                }}>
+                    <div>&copy; {new Date().getFullYear()} Anify. All rights reserved.</div>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                        <span>Developed by <a href="https://psatyakiran.in" target="_blank" rel="noopener noreferrer" style={{ color: '#fff', textDecoration: 'none', transition: 'color 0.2s ease', fontWeight: 500 }} onMouseOver={(e) => e.target.style.color = '#3b82f6'} onMouseOut={(e) => e.target.style.color = '#fff'}>Satya Kiran</a></span>
+                    </div>
                 </div>
             </div>
 
             <style>{`
                 .footer-links a {
-                    color: var(--text-secondary);
-                    transition: all 0.3s ease;
-                    display: inline-block;
+                    color: #94a3b8;
+                    transition: color 0.2s ease;
+                    text-decoration: none;
+                    font-size: 0.9rem;
+                    font-weight: 500;
                 }
                 .footer-links a:hover {
-                    color: var(--accent-color);
-                    transform: translateX(5px);
+                    color: #fff;
                 }
             `}</style>
         </footer>

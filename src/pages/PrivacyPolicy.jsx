@@ -1,9 +1,11 @@
 import React from 'react';
+import SEO from '../components/ui/SEO';
 import { Link } from 'react-router-dom';
 
 const PrivacyPolicy = () => {
   return (
     <div style={{ maxWidth: '800px', margin: '140px auto 100px', padding: '0 24px', color: 'var(--text-primary)', lineHeight: '1.8' }}>
+      <SEO title="Privacy Policy | Anify" description="Anify privacy policy and data retention guidelines." />
       <h1 style={{ fontSize: '2.5rem', marginBottom: '24px', color: 'var(--accent-color)', letterSpacing: '-1px' }}>Privacy Policy for Anify</h1>
       <p style={{ color: 'var(--text-secondary)' }}><strong>Effective Date:</strong> {new Date().toLocaleDateString()}</p>
 

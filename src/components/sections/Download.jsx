@@ -1,13 +1,19 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 
 const Download = () => {
     return (
-        <section id="download" className="animate-fade-in" style={{
+        <section id="download" style={{
             padding: '120px 24px',
             display: 'flex',
             justifyContent: 'center'
         }}>
-            <div style={{
+            <motion.div 
+                initial={{ opacity: 0, scale: 0.95, y: 20 }}
+                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                style={{
                 textAlign: 'center',
                 background: 'linear-gradient(135deg, var(--accent-color), #ff2a00)',
                 color: '#fff',
@@ -86,7 +92,7 @@ const Download = () => {
                             <a href="#" style={{ textDecoration: 'underline', fontWeight: 'bold', marginLeft: '6px', color: '#fff' }}>AnisetPro</a>.</p>
                     </div>
                 </div>
-            </div>
+            </motion.div>
         </section>
     )
 }

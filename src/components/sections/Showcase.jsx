@@ -1,131 +1,123 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 
 const Showcase = () => {
-    const items = [
-        { title: "WEATHER_MINIMAL", img: "/showcase1.png" },
-        { title: "MUSIC_VIBRANT", img: "/anime.png" },
-        { title: "CALENDAR_DOTS", img: "/showcase2.png" },
-        { title: "SYSTEM_MONO", img: "/showcase1.png" }
+    // Array of placeholder screenshot paths
+    const screenshots = [
+        { title: "Home Screen", img: "https://via.placeholder.com/300x600/1a1b23/3b82f6?text=Home+Screen" },
+        { title: "Widget Setup", img: "https://via.placeholder.com/300x600/1a1b23/8b5cf6?text=Widgets" },
+        { title: "Wallpapers", img: "https://via.placeholder.com/300x600/1a1b23/ec4899?text=Wallpapers" },
+        { title: "Ringtones", img: "https://via.placeholder.com/300x600/1a1b23/10b981?text=Ringtones" }
     ]
 
     return (
-        <section id="showcase" className="animate-fade-in" style={{ padding: '100px 24px', position: 'relative' }}>
-            {/* Background Glows for the section */}
-            <div style={{
-                position: 'absolute',
-                top: '20%',
-                left: '-10%',
-                width: '40vw',
-                height: '40vw',
-                background: 'var(--accent-color)',
-                opacity: 0.05,
-                filter: 'blur(100px)',
-                borderRadius: '50%',
-                zIndex: 0,
-                pointerEvents: 'none'
-            }}></div>
-
-            <div style={{ textAlign: 'center', marginBottom: '60px', position: 'relative', zIndex: 1 }}>
-                <h2 style={{
-                    fontSize: 'clamp(2rem, 8vw, 3.5rem)',
+        <section id="screenshots" style={{ padding: '120px 24px', position: 'relative' }}>
+            <motion.div 
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.6 }}
+                style={{ textAlign: 'center', marginBottom: '80px', position: 'relative', zIndex: 1 }}
+            >
+                <h2 style={{ 
+                    fontFamily: 'Inter, sans-serif',
+                    fontSize: 'clamp(2.5rem, 6vw, 3.5rem)', 
+                    fontWeight: 800,
+                    color: '#fff',
                     marginBottom: '16px',
-                    display: 'inline-block',
-                    padding: '0 20px',
-                    borderLeft: '4px solid var(--accent-color)',
-                    borderRight: '4px solid var(--accent-anime)',
+                    letterSpacing: '-1px'
                 }}>
-                    SHOWCASE
+                    App Screenshots
                 </h2>
-                <p style={{ color: 'var(--text-secondary)', fontFamily: 'Geist Mono, monospace', fontSize: '1rem', letterSpacing: '2px' }}>
-                    [ EXPLORE THE DIVERSITY ]
+                <p style={{
+                    color: '#94a3b8',
+                    fontSize: '1.1rem',
+                    maxWidth: '600px',
+                    margin: '0 auto'
+                }}>
+                    A glimpse into the beautiful and intuitive interface of Anify.
                 </p>
-            </div>
+            </motion.div>
 
-            {/* Desktop Grid Layout / Mobile Scroll Layout */}
-            <div className="showcase-grid" style={{
+            <div style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
                 gap: '32px',
-                position: 'relative',
-                zIndex: 1,
                 maxWidth: '1200px',
-                margin: '0 auto'
+                margin: '0 auto',
+                position: 'relative',
+                zIndex: 1
             }}>
-                {items.map((item, index) => (
-                    <div key={index} className="glass-card showcase-card" style={{
-                        padding: '24px',
+                {screenshots.map((item, index) => (
+                    <motion.div 
+                        key={index} 
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, margin: "-50px" }}
+                        transition={{ duration: 0.6, delay: index * 0.15 }}
+                        className="screenshot-card" 
+                        style={{
                         display: 'flex',
                         flexDirection: 'column',
-                        gap: '20px',
-                        position: 'relative',
-                        overflow: 'hidden',
-                        transition: 'all 0.3s ease',
-                        border: '1px solid var(--glass-border)'
+                        alignItems: 'center',
+                        gap: '16px'
                     }}>
-                        {/* Inner Gradient Accent */}
-                        <div style={{
-                            position: 'absolute',
-                            top: 0,
-                            left: 0,
-                            width: '100%',
-                            height: '4px',
-                            background: index % 2 === 0
-                                ? 'linear-gradient(90deg, var(--accent-color), transparent)'
-                                : 'linear-gradient(90deg, var(--accent-anime), transparent)'
-                        }}></div>
-
                         <div style={{
                             width: '100%',
-                            aspectRatio: '1/1', /* Force squared aspect for uniformity */
-                            borderRadius: '12px',
-                            overflow: 'hidden',
+                            aspectRatio: '9/19',
+                            background: '#1a1b23',
+                            borderRadius: '32px',
+                            padding: '8px',
+                            border: '4px solid #2a2b36',
+                            boxShadow: '0 20px 40px rgba(0,0,0,0.5)',
                             position: 'relative',
-                            background: 'rgba(0,0,0,0.4)',
-                            border: '1px solid rgba(255,255,255,0.05)',
-                        }}>
-                            <img src={item.img} alt={item.title} style={{
+                            overflow: 'hidden',
+                            transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)'
+                        }} className="phone-frame">
+                            <div style={{
                                 width: '100%',
                                 height: '100%',
-                                objectFit: 'cover',
-                                transition: 'transform 0.5s ease'
-                            }} className="showcase-image" />
-                        </div>
-
-                        <div style={{
-                            display: 'flex',
-                            justifyContent: 'space-between',
-                            alignItems: 'center',
-                            paddingTop: '8px',
-                            borderTop: '1px dashed rgba(255,255,255,0.1)'
-                        }}>
-                            <span style={{
-                                fontFamily: 'Geist Mono, monospace',
-                                fontSize: '0.85rem',
-                                color: 'var(--text-primary)',
-                                letterSpacing: '0.5px'
+                                borderRadius: '24px',
+                                overflow: 'hidden',
+                                background: '#09090b',
+                                position: 'relative'
                             }}>
-                                {item.title}
-                            </span>
-                            <div style={{
-                                width: '8px',
-                                height: '8px',
-                                background: index % 2 === 1 ? 'var(--accent-anime)' : 'var(--accent-color)',
-                                borderRadius: '50%',
-                                boxShadow: `0 0 10px ${index % 2 === 1 ? 'rgba(139,92,246,0.6)' : 'rgba(255,80,0,0.6)'}`
-                            }}></div>
+                                <img src={item.img} alt={item.title} style={{
+                                    width: '100%',
+                                    height: '100%',
+                                    objectFit: 'cover'
+                                }} />
+                                {/* Phone Notch Mockup */}
+                                <div style={{
+                                    position: 'absolute',
+                                    top: 0,
+                                    left: '50%',
+                                    transform: 'translateX(-50%)',
+                                    width: '40%',
+                                    height: '24px',
+                                    background: '#2a2b36',
+                                    borderBottomLeftRadius: '12px',
+                                    borderBottomRightRadius: '12px'
+                                }}></div>
+                            </div>
                         </div>
-                    </div>
+                        <h3 style={{
+                            fontFamily: 'Inter, sans-serif',
+                            fontSize: '1.1rem',
+                            fontWeight: 600,
+                            color: '#e2e8f0'
+                        }}>
+                            {item.title}
+                        </h3>
+                    </motion.div>
                 ))}
             </div>
 
             <style>{`
-                .showcase-card:hover {
-                    transform: translateY(-8px);
-                    border-color: rgba(255,255,255,0.2);
-                    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-                }
-                .showcase-card:hover .showcase-image {
-                    transform: scale(1.05);
+                .phone-frame:hover {
+                    transform: translateY(-15px);
+                    border-color: #3b82f6;
+                    box-shadow: 0 30px 60px rgba(59, 130, 246, 0.2);
                 }
             `}</style>
         </section>

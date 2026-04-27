@@ -1,176 +1,263 @@
 import React, { useState, useEffect } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 
 const Header = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [scrolled, setScrolled] = useState(false);
+    const [scrolled, setScrolled] = useState(false)
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+    const location = useLocation()
 
     useEffect(() => {
         const handleScroll = () => {
-            setScrolled(window.scrollY > 50);
-        };
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+            setScrolled(window.scrollY > 20)
+        }
+        window.addEventListener('scroll', handleScroll)
+        return () => window.removeEventListener('scroll', handleScroll)
+    }, [])
+
+    const navLinks = [
+        { name: "Home", path: "/" },
+        { name: "Features", path: "/#features" },
+        { name: "Changelog", path: "/changelog" },
+        { name: "FAQ", path: "/#faq" }
+    ]
+
+    const handleNavClick = (path) => {
+        setMobileMenuOpen(false);
+        if (path.startsWith('/#') && location.pathname === '/') {
+            const element = document.querySelector(path.substring(1));
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    }
 
     return (
         <header style={{
-            padding: '16px 24px',
             position: 'fixed',
-            top: scrolled ? '10px' : '20px',
-            left: '50%',
-            transform: 'translateX(-50%)',
-            width: 'calc(100% - 48px)',
-            maxWidth: '1200px',
-            zIndex: 100,
-            background: scrolled ? 'rgba(10, 10, 10, 0.8)' : 'var(--glass-bg)',
-            backdropFilter: 'var(--glass-blur)',
-            WebkitBackdropFilter: 'var(--glass-blur)',
-            border: '1px solid var(--glass-border)',
-            borderRadius: isMenuOpen ? '24px' : '100px',
-            boxShadow: 'var(--glass-shadow)',
-            transition: 'all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1)'
+            top: 0,
+            left: 0,
+            right: 0,
+            zIndex: 1000,
+            transition: 'all 0.3s ease',
+            padding: scrolled ? '15px 24px' : '24px',
+            background: scrolled ? 'rgba(15, 16, 20, 0.8)' : 'transparent',
+            backdropFilter: scrolled ? 'blur(12px)' : 'none',
+            borderBottom: scrolled ? '1px solid rgba(255,255,255,0.05)' : '1px solid transparent'
         }}>
             <div style={{
+                maxWidth: '1200px',
+                margin: '0 auto',
                 display: 'flex',
-                justifyContent: 'space-between',
                 alignItems: 'center',
+                justifyContent: 'space-between'
             }}>
-                <div style={{
-                    fontFamily: 'Geist Mono, monospace',
-                    fontSize: '1.5rem',
-                    fontWeight: 'bold',
-                    letterSpacing: '-1px',
-                    zIndex: 101
-                }}>
-                    ANIFY<span style={{ color: 'var(--accent-color)' }}>.</span>
-                </div>
-
-                {/* Desktop Nav */}
-                <nav className="desktop-nav">
-                    <ul style={{
-                        display: 'flex',
-                        gap: '32px',
-                        listStyle: 'none',
-                        fontFamily: 'Geist Mono, monospace',
-                        fontSize: '0.9rem',
-                        textTransform: 'uppercase',
-                        margin: 0,
-                        padding: 0
+                {/* Logo */}
+                <Link to="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '12px' }}>
+                    <img
+                        src="https://play-lh.googleusercontent.com/jx1tzenU6YSJJuW8we6lg-0qqgjv9v-UnH6wBPyY1qXlqNRgzaoZGAaflLcaXMV7APcLRlhH6nz3g9BCf8idlKA=w240-h480-rw"
+                        alt="Anify Logo"
+                        style={{
+                            width: '36px',
+                            height: '36px',
+                            borderRadius: '10px',
+                            objectFit: 'cover',
+                            boxShadow: '0 4px 10px rgba(59, 130, 246, 0.3)'
+                        }}
+                    />
+                    <span style={{
+                        fontFamily: 'Inter, serif',
+                        fontSize: '1.5rem',
+                        fontWeight: 900,
+                        color: '#fff',
+                        letterSpacing: '-0.5px'
                     }}>
-                        {/* <li><a href="#features">Features</a></li> */}
-                        {/* <li><a href="#showcase">Showcase</a></li>
-                        <li><a href="#reviews">Reviews</a></li>
-                        <li><a href="#download">Download</a></li>
-                        <li><a href="#donate">Donate</a></li> */}
-                        {/* <li><a href="#community">Community</a></li> */}
-                    </ul>
+                        Anify
+                    </span>
+                </Link>
+
+                {/* Desktop Navigation */}
+                <nav className="desktop-nav" style={{
+                    display: 'flex',
+                    gap: '32px',
+                    alignItems: 'center'
+                }}>
+                    {navLinks.map((link, i) => (
+                        link.path.startsWith('/#') ? (
+                            <a
+                                key={i}
+                                href={link.path}
+                                onClick={(e) => {
+                                    if (location.pathname === '/') {
+                                        e.preventDefault();
+                                        handleNavClick(link.path);
+                                    }
+                                }}
+                                style={{
+                                    color: '#e2e8f0',
+                                    textDecoration: 'none',
+                                    fontSize: '0.95rem',
+                                    fontWeight: 500,
+                                    fontFamily: 'Inter, sans-serif',
+                                    transition: 'color 0.2s ease'
+                                }}
+                                onMouseOver={(e) => e.target.style.color = '#38bdf8'}
+                                onMouseOut={(e) => e.target.style.color = '#e2e8f0'}
+                            >
+                                {link.name}
+                            </a>
+                        ) : (
+                            <Link
+                                key={i}
+                                to={link.path}
+                                onClick={() => setMobileMenuOpen(false)}
+                                style={{
+                                    color: '#e2e8f0',
+                                    textDecoration: 'none',
+                                    fontSize: '0.95rem',
+                                    fontWeight: 500,
+                                    fontFamily: 'Inter, sans-serif',
+                                    transition: 'color 0.2s ease'
+                                }}
+                                onMouseOver={(e) => e.target.style.color = '#38bdf8'}
+                                onMouseOut={(e) => e.target.style.color = '#e2e8f0'}
+                            >
+                                {link.name}
+                            </Link>
+                        )
+                    ))}
                 </nav>
 
-                <div style={{ display: 'flex', gap: '16px', alignItems: 'center', zIndex: 101 }}>
-                    <button className="header-cta desktop-only" style={{
-                        padding: '10px 20px',
-                        href: "https://aniset.vercel.app/pro",
-                        fontSize: '0.8rem',
-                        clipPath: 'polygon(8px 0%, 100% 0%, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0% 100%, 0% 8px)'
-                    }}>
-                        Get Pro
-                    </button>
+                {/* Right Actions */}
+                <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
+                    {/* Download Button Desktop */}
+                    <div className="desktop-nav">
+                        <a href="https://play.google.com/store/apps/details?id=com.skdev.anify" target="_blank" rel="noopener noreferrer" style={{
+                            background: 'rgba(59, 130, 246, 0.1)',
+                            color: '#3b82f6',
+                            padding: '10px 24px',
+                            borderRadius: '20px',
+                            border: '1px solid rgba(59, 130, 246, 0.2)',
+                            fontFamily: 'Inter, sans-serif',
+                            fontWeight: 600,
+                            fontSize: '0.9rem',
+                            cursor: 'pointer',
+                            transition: 'all 0.2s ease',
+                            textDecoration: 'none',
+                            display: 'inline-block'
+                        }}
+                            onMouseOver={(e) => {
+                                e.target.style.background = '#3b82f6';
+                                e.target.style.color = '#fff';
+                            }}
+                            onMouseOut={(e) => {
+                                e.target.style.background = 'rgba(59, 130, 246, 0.1)';
+                                e.target.style.color = '#3b82f6';
+                            }}>
+                            Download
+                        </a>
+                    </div>
 
                     {/* Mobile Menu Toggle */}
                     <button
                         className="mobile-toggle"
-                        onClick={() => setIsMenuOpen(!isMenuOpen)}
-                        aria-label="Toggle Menu"
+                        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                         style={{
-                            padding: '8px',
                             background: 'transparent',
-                            color: 'var(--text-primary)',
-                            clipPath: 'none',
-                            display: 'flex',
-                            flexDirection: 'column',
-                            gap: '5px',
-                            width: '40px',
-                            height: '40px',
-                            justifyContent: 'center',
-                            alignItems: 'center',
                             border: 'none',
-                            boxShadow: 'none'
+                            color: '#fff',
+                            fontSize: '1.5rem',
+                            cursor: 'pointer',
+                            display: 'none',
+                            zIndex: 1001
                         }}
                     >
-                        <span style={{
-                            width: '24px', height: '2px', background: 'currentColor',
-                            transition: 'all 0.3s ease',
-                            transform: isMenuOpen ? 'translateY(7px) rotate(45deg)' : 'none'
-                        }}></span>
-                        <span style={{
-                            width: '24px', height: '2px', background: 'currentColor',
-                            transition: 'all 0.3s ease',
-                            opacity: isMenuOpen ? 0 : 1
-                        }}></span>
-                        <span style={{
-                            width: '24px', height: '2px', background: 'currentColor',
-                            transition: 'all 0.3s ease',
-                            transform: isMenuOpen ? 'translateY(-7px) rotate(-45deg)' : 'none'
-                        }}></span>
+                        {mobileMenuOpen ? '✕' : '☰'}
                     </button>
                 </div>
             </div>
 
-            {/* Mobile Nav Dropdown */}
-            <div className="mobile-nav-container" style={{
-                maxHeight: isMenuOpen ? '300px' : '0',
-                overflow: 'hidden',
-                transition: 'all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1)',
-                opacity: isMenuOpen ? 1 : 0,
-                visibility: isMenuOpen ? 'visible' : 'hidden'
-            }}>
-                <nav style={{ padding: '24px 0 8px' }}>
-                    <ul style={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                        gap: '20px',
-                        listStyle: 'none',
-                        fontFamily: 'Geist Mono, monospace',
-                        fontSize: '1.1rem',
-                        textTransform: 'uppercase',
+            {/* Mobile Dropdown Menu */}
+            {mobileMenuOpen && (
+                <div style={{
+                    position: 'absolute',
+                    top: '100%',
+                    left: 0,
+                    right: 0,
+                    background: '#0f1014',
+                    borderBottom: '1px solid rgba(255,255,255,0.05)',
+                    padding: '24px',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '16px',
+                    boxShadow: '0 20px 40px rgba(0,0,0,0.5)'
+                }}>
+                    {navLinks.map((link, i) => (
+                        link.path.startsWith('/#') ? (
+                            <a
+                                key={i}
+                                href={link.path}
+                                onClick={(e) => {
+                                    if (location.pathname === '/') {
+                                        e.preventDefault();
+                                        handleNavClick(link.path);
+                                    }
+                                }}
+                                style={{
+                                    color: '#e2e8f0',
+                                    textDecoration: 'none',
+                                    fontSize: '1.1rem',
+                                    fontWeight: 500,
+                                    fontFamily: 'Inter, sans-serif',
+                                    padding: '12px 0',
+                                    borderBottom: '1px solid rgba(255,255,255,0.05)'
+                                }}
+                            >
+                                {link.name}
+                            </a>
+                        ) : (
+                            <Link
+                                key={i}
+                                to={link.path}
+                                onClick={() => setMobileMenuOpen(false)}
+                                style={{
+                                    color: '#e2e8f0',
+                                    textDecoration: 'none',
+                                    fontSize: '1.1rem',
+                                    fontWeight: 500,
+                                    fontFamily: 'Inter, sans-serif',
+                                    padding: '12px 0',
+                                    borderBottom: '1px solid rgba(255,255,255,0.05)'
+                                }}
+                            >
+                                {link.name}
+                            </Link>
+                        )
+                    ))}
+                    <a href="https://play.google.com/store/apps/details?id=com.skdev.anify" target="_blank" rel="noopener noreferrer" style={{
+                        background: '#3b82f6',
+                        color: '#fff',
+                        padding: '14px 24px',
+                        borderRadius: '20px',
+                        fontFamily: 'Inter, sans-serif',
+                        fontWeight: 600,
+                        fontSize: '1rem',
                         textAlign: 'center',
-                        margin: 0,
-                        padding: 0
+                        textDecoration: 'none',
+                        marginTop: '12px'
                     }}>
-                        {/* <li><a href="#features" onClick={() => setIsMenuOpen(false)}>Features</a></li> */}
-                        {/* <li><a href="#showcase" onClick={() => setIsMenuOpen(false)}>Showcase</a></li>
-                        <li><a href="#reviews" onClick={() => setIsMenuOpen(false)}>Reviews</a></li>
-                        <li><a href="#download" onClick={() => setIsMenuOpen(false)}>Download</a></li>
-                        <li><a href="#donate" onClick={() => setIsMenuOpen(false)}>Donate</a></li> */}
-                        {/* <li><a href="#community" onClick={() => setIsMenuOpen(false)}>Community</a></li> */}
-                    </ul>
-                    <button onClick={() => setIsMenuOpen(false)} style={{
-                        width: '100%',
-                        marginTop: '24px',
-                        padding: '14px',
-                        clipPath: 'polygon(8px 0%, 100% 0%, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0% 100%, 0% 8px)'
-                    }}>
-                        Get Pro
-                    </button>
-                </nav>
-            </div>
+                        Download App
+                    </a>
+                </div>
+            )}
 
             <style>{`
-                /* Hide desktop nav by default on mobile */
-                .desktop-nav { display: none; }
-                .mobile-nav-container { display: block; }
-                .mobile-toggle { display: flex !important; }
-
-                /* Desktop View */
-                @media (min-width: 769px) {
-                    .desktop-nav { display: block; }
-                    .mobile-toggle, .mobile-nav-container { display: none !important; }
-                    .desktop-only { display: block !important; }
-                }
-
-                /* Mobile View */
                 @media (max-width: 768px) {
-                    .desktop-only { display: none !important; }
+                    .desktop-nav {
+                        display: none !important;
+                    }
+                    .mobile-toggle {
+                        display: block !important;
+                    }
                 }
             `}</style>
         </header>

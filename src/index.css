@@ -2,22 +2,23 @@
 
 :root {
   /* Core Colors */
-  --bg-color: #050505;
+  --bg-color: #0f1014;
   --text-primary: #ffffff;
-  --text-secondary: #a0a0a0;
-  --accent-color: #ff5000;
-  --accent-anime: #8b5cf6;
-  --accent-glow: rgba(255, 80, 0, 0.4);
+  --text-secondary: #9ca3af;
+  --accent-color: #8b5cf6;
+  --accent-light: #a78bfa;
+  --accent-glow: rgba(139, 92, 246, 0.4);
+  --notice-color: #ff4d4d;
 
   /* Glassmorphism Variables */
-  --glass-bg: rgba(20, 20, 20, 0.4);
+  --glass-bg: rgba(20, 20, 25, 0.4);
   --glass-border: rgba(255, 255, 255, 0.08);
   --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
   --glass-blur: blur(16px);
 
   /* Selection */
   --selection-bg: var(--accent-color);
-  --selection-text: #000000;
+  --selection-text: #ffffff;
 
   font-family: 'Geist', 'Inter', system-ui, sans-serif;
   line-height: 1.6;
@@ -53,10 +54,7 @@ body {
   width: 100%;
   overflow-x: hidden;
   background-color: var(--bg-color);
-  /* Modern dynamic mesh gradient underlying pattern */
-  background-image:
-    radial-gradient(circle at 15% 50%, rgba(255, 80, 0, 0.03) 0%, transparent 50%),
-    radial-gradient(circle at 85% 30%, rgba(139, 92, 246, 0.04) 0%, transparent 50%);
+  /* Dark modern background without mesh */
   background-attachment: fixed;
 }
 
@@ -82,32 +80,20 @@ h4 {
 
 /* Enhanced Buttons */
 button {
-  background-color: var(--text-primary);
-  color: var(--bg-color);
   border: none;
-  padding: 14px 28px;
-  font-family: 'Geist Mono', monospace;
+  font-family: 'Geist', 'Inter', system-ui, sans-serif;
   font-weight: 600;
   font-size: 0.95rem;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-  /* Themed cut-corners */
-  clip-path: polygon(12px 0%, 100% 0%, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0% 100%, 0% 12px);
-  position: relative;
-  overflow: hidden;
-}
-
-button:hover {
-  background-color: var(--accent-color);
-  color: #fff;
-  transform: translateY(-4px);
-  box-shadow: 0 10px 20px var(--accent-glow);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 }
 
 button:active {
-  transform: translateY(-1px);
+  transform: translateY(1px) scale(0.98);
 }
 
 /* Premium Glass Card */
@@ -187,25 +173,12 @@ button:active {
 
 /* Grid Background */
 .dot-bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-  background-size: 40px 40px;
-  background-position: center center;
-  mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
-  -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+  display: none;
 }
 
 section {
   padding: 100px 24px;
-  max-width: 1280px;
-  margin: 0 auto;
+  width: 100%;
   position: relative;
   z-index: 1;
 }
