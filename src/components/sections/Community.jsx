@@ -6,7 +6,7 @@ const Community = () => {
         {
             name: "Instagram",
             description: "Follow for the latest design concepts and updates.",
-            url: "https://instagram.com/skdev1",
+            url: "https://instagram.com/skdev29",
             color: "#e1306c",
             icon: (
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

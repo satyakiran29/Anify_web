@@ -49,7 +49,7 @@ const Footer = () => {
                 }}>
                     <Link to="/privacy-policy">Privacy Policy</Link>
                     <a href="https://t.me/anify_app" target="_blank" rel="noopener noreferrer">Telegram</a>
-                    <a href="https://instagram.com/skdev1" target="_blank" rel="noopener noreferrer">Instagram</a>
+                    <a href="https://instagram.com/skdev29" target="_blank" rel="noopener noreferrer">Instagram</a>
                 </div>
 
                 {/* Copyright & Bottom Bar */}
