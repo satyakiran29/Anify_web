@@ -48,9 +48,9 @@ const Footer = () => {
                     fontFamily: 'Inter, sans-serif'
                 }}>
                     <Link to="/privacy-policy">Privacy Policy</Link>
-                    <a href="#">Terms of Service</a>
-                    <a href="https://t.me/AnifyWeb" target="_blank" rel="noopener noreferrer">Telegram</a>
-                    <a href="https://instagram.com/AnifyWeb" target="_blank" rel="noopener noreferrer">Instagram</a>
+                    <Link to="/terms-of-service">Terms of Service</Link>
+                    <a href="https://t.me/anify_app" target="_blank" rel="noopener noreferrer">Telegram</a>
+                    <a href="https://instagram.com/skdev1" target="_blank" rel="noopener noreferrer">Instagram</a>
                 </div>
 
                 {/* Copyright & Bottom Bar */}

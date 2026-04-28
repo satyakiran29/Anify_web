@@ -110,9 +110,9 @@ const VideoGuide = () => {
                 gap: '24px'
             }}>
                 {[
-                    { step: '01', title: 'Install KWGT Pro', desc: 'Anify requires KWGT Pro to function. Make sure it is installed from the Play Store first.' },
-                    { step: '02', title: 'Add a Widget', desc: 'Long press your home screen, select Widgets, and drag an empty KWGT block onto your screen.' },
-                    { step: '03', title: 'Apply Anify', desc: "Tap the empty widget block, open the 'Explore' tab, and select any widget from the Anify pack." }
+                    { step: '01', title: 'Open Anify App', desc: 'Launch the Anify app and explore the wide collection of beautifully crafted widgets.' },
+                    { step: '02', title: 'Add a Widget', desc: 'Long press your home screen, select Widgets, and find the Anify widgets section.' },
+                    { step: '03', title: 'Apply Anify', desc: "Drag your preferred Anify widget onto your home screen and customize it to your liking." }
                 ].map((item, i) => (
                     <motion.div 
                         key={i}

@@ -9,7 +9,7 @@ const FAQ = () => {
         },
         {
             question: "How do I apply the widgets?",
-            answer: "Once you download Anify, you will need KWGT Pro installed. Simply add a KWGT widget to your home screen, tap on it, and select your preferred widget from the Anify library."
+            answer: "Anify has its own built-in widget engine. Simply long-press your home screen, open the Widgets menu, find Anify, and drag your favorite widget onto your screen."
         },
         {
             question: "Are the wallpapers free?",

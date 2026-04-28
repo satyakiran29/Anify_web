@@ -6,7 +6,7 @@ const Community = () => {
         {
             name: "Instagram",
             description: "Follow for the latest design concepts and updates.",
-            url: "https://instagram.com/AnifyWeb",
+            url: "https://instagram.com/skdev1",
             color: "#e1306c",
             icon: (
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -19,7 +19,7 @@ const Community = () => {
         {
             name: "Telegram",
             description: "Join our community group to request features and chat.",
-            url: "https://t.me/AnifyWeb",
+            url: "https://t.me/anify_app",
             color: "#0088cc",
             icon: (
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
