@@ -16,7 +16,7 @@ const Hero = () => {
             gap: '60px'
         }}>
             {/* Left Column */}
-            <motion.div 
+            <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
@@ -34,7 +34,7 @@ const Hero = () => {
                 }}>
                     Anify
                 </h1>
-                
+
                 <h2 style={{
                     fontFamily: 'Inter, sans-serif',
                     fontSize: 'clamp(1.5rem, 3vw, 2.5rem)',
@@ -44,7 +44,7 @@ const Hero = () => {
                     color: '#e2e8f0',
                     letterSpacing: '-0.5px'
                 }}>
-                    Widgets, Wallpapers <br/>
+                    Widgets, Wallpapers <br />
                     <span style={{ color: '#3b82f6' }}>& Ringtones</span>
                 </h2>
 
@@ -108,10 +108,91 @@ const Hero = () => {
                         Explore Features
                     </a>
                 </div>
+
+                {/* Direct Play Store Trust Badges */}
+                <div className="hero-badges" style={{
+                    display: 'flex',
+                    flexWrap: 'wrap',
+                    gap: '12px',
+                    marginTop: '32px',
+                    alignItems: 'center'
+                }}>
+                    <a
+                        href="https://play.google.com/store/apps/details?id=com.skdev.anify"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="badge-pill"
+                        style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '8px',
+                            background: 'rgba(255, 255, 255, 0.03)',
+                            border: '1px solid rgba(255, 255, 255, 0.08)',
+                            padding: '8px 16px',
+                            borderRadius: '20px',
+                            color: '#cbd5e1',
+                            fontSize: '0.88rem',
+                            fontWeight: 500,
+                            textDecoration: 'none',
+                            transition: 'all 0.3s ease'
+                        }}
+                    >
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--accent-color)" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+                        </svg>
+                        <span>4.8★ Rating</span>
+                    </a>
+
+                    <div
+                        className="badge-pill"
+                        style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '8px',
+                            background: 'rgba(255, 255, 255, 0.03)',
+                            border: '1px solid rgba(255, 255, 255, 0.08)',
+                            padding: '8px 16px',
+                            borderRadius: '20px',
+                            color: '#cbd5e1',
+                            fontSize: '0.88rem',
+                            fontWeight: 500,
+                            transition: 'all 0.3s ease'
+                        }}
+                    >
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-color)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        <span>100+ Installs</span>
+                    </div>
+
+                    <div
+                        className="badge-pill"
+                        style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '8px',
+                            background: 'rgba(255, 255, 255, 0.03)',
+                            border: '1px solid rgba(255, 255, 255, 0.08)',
+                            padding: '8px 16px',
+                            borderRadius: '20px',
+                            color: '#cbd5e1',
+                            fontSize: '0.88rem',
+                            fontWeight: 500,
+                            transition: 'all 0.3s ease'
+                        }}
+                    >
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-color)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                        <span>Verified Safe</span>
+                    </div>
+                </div>
             </motion.div>
 
             {/* Right Column: App Screenshots */}
-            <motion.div 
+            <motion.div
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
@@ -125,12 +206,12 @@ const Hero = () => {
                 }}
             >
                 {/* Back Image (Secondary) */}
-                <motion.img 
+                <motion.img
                     initial={{ y: 20 }}
                     animate={{ y: [20, -10, 20] }}
                     transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-                    src="https://aniset.psatyakiran.in/assets/aniset-a5b9f150.png" 
-                    alt="Anify App Screenshot Background" 
+                    src="https://aniset.psatyakiran.in/assets/aniset-a5b9f150.png"
+                    alt="Anify App Screenshot Background"
                     style={{
                         position: 'absolute',
                         left: '-10%',
@@ -148,12 +229,12 @@ const Hero = () => {
                 />
 
                 {/* Front Image (Primary) */}
-                <motion.img 
+                <motion.img
                     initial={{ y: 0 }}
                     animate={{ y: [0, -15, 0] }}
                     transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
-                    src="https://aniset.psatyakiran.in/assets/aniset-a5b9f150.png" 
-                    alt="Anify App Screenshot" 
+                    src="https://aniset.psatyakiran.in/assets/aniset-a5b9f150.png"
+                    alt="Anify App Screenshot"
                     style={{
                         position: 'relative',
                         width: '300px',
@@ -171,6 +252,12 @@ const Hero = () => {
             </motion.div>
 
             <style>{`
+                .badge-pill:hover {
+                    border-color: var(--accent-color) !important;
+                    background: rgba(139, 92, 246, 0.08) !important;
+                    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.15);
+                    transform: translateY(-2px);
+                }
                 @media (max-width: 900px) {
                     #hero {
                         flex-direction: column !important;
@@ -192,6 +279,9 @@ const Hero = () => {
                     #hero > div:last-child {
                         width: 100%;
                         min-height: 500px;
+                    }
+                    .hero-badges {
+                        justify-content: center !important;
                     }
                 }
             `}</style>
