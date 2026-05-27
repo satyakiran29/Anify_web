@@ -5,6 +5,7 @@ import Hero from './components/sections/Hero'
 import Features from './components/sections/Features'
 import VideoGuide from './components/sections/VideoGuide'
 import OtherApps from './components/sections/OtherApps'
+import Reviews from './components/sections/Reviews'
 import FAQ from './components/sections/FAQ'
 import Community from './components/sections/Community'
 import Footer from './components/layout/Footer'
@@ -23,6 +24,7 @@ function Home() {
       <Features />
       <VideoGuide />
       <OtherApps />
+      <Reviews />
       <FAQ />
       <Community />
     </>
