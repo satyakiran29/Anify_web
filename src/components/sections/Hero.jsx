@@ -1,5 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import screenshot1 from '../../assets/screenshots/Screenshot 2026-05-25 141125.png'
+import screenshot2 from '../../assets/screenshots/Screenshot 2026-05-25 141145.png'
 
 const Hero = () => {
     return (
@@ -192,17 +194,17 @@ const Hero = () => {
             </motion.div>
 
             {/* Right Column: App Screenshots */}
-            <motion.div
+            <motion.div 
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+                className="hero-mockup-container"
                 style={{
                     flex: 1,
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center',
-                    position: 'relative',
-                    minHeight: '600px'
+                    position: 'relative'
                 }}
             >
                 {/* Back Image (Secondary) */}
@@ -210,16 +212,12 @@ const Hero = () => {
                     initial={{ y: 20 }}
                     animate={{ y: [20, -10, 20] }}
                     transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-                    src="https://aniset.psatyakiran.in/assets/aniset-a5b9f150.png"
+                    src={screenshot2}
                     alt="Anify App Screenshot Background"
+                    className="mockup-back"
                     style={{
                         position: 'absolute',
-                        left: '-10%',
-                        top: '8%',
-                        width: '280px',
-                        height: '580px',
                         objectFit: 'cover',
-                        borderRadius: '36px',
                         border: '6px solid #2a2b36',
                         transform: 'scale(0.9) rotate(-10deg)',
                         boxShadow: '-15px 20px 40px rgba(0,0,0,0.6)',
@@ -233,14 +231,12 @@ const Hero = () => {
                     initial={{ y: 0 }}
                     animate={{ y: [0, -15, 0] }}
                     transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
-                    src="https://aniset.psatyakiran.in/assets/aniset-a5b9f150.png"
+                    src={screenshot1}
                     alt="Anify App Screenshot"
+                    className="mockup-front"
                     style={{
                         position: 'relative',
-                        width: '300px',
-                        height: '620px',
                         objectFit: 'cover',
-                        borderRadius: '40px',
                         border: '8px solid #334155',
                         boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.8)',
                         zIndex: 2,
@@ -252,6 +248,21 @@ const Hero = () => {
             </motion.div>
 
             <style>{`
+                .hero-mockup-container {
+                    min-height: 560px;
+                }
+                .mockup-front {
+                    width: 300px;
+                    height: 534px;
+                    border-radius: 32px;
+                }
+                .mockup-back {
+                    width: 280px;
+                    height: 493px;
+                    border-radius: 28px;
+                    left: -8%;
+                    top: 10%;
+                }
                 .badge-pill:hover {
                     border-color: var(--accent-color) !important;
                     background: rgba(139, 92, 246, 0.08) !important;
@@ -278,10 +289,51 @@ const Hero = () => {
                     }
                     #hero > div:last-child {
                         width: 100%;
-                        min-height: 500px;
+                    }
+                    .hero-mockup-container {
+                        min-height: 540px;
                     }
                     .hero-badges {
                         justify-content: center !important;
+                    }
+                }
+                @media (max-width: 768px) {
+                    .hero-mockup-container {
+                        min-height: 480px !important;
+                    }
+                    .mockup-front {
+                        width: 250px !important;
+                        height: 445px !important;
+                        border-radius: 28px !important;
+                        border-width: 6px !important;
+                    }
+                    .mockup-back {
+                        width: 230px !important;
+                        height: 405px !important;
+                        border-radius: 24px !important;
+                        border-width: 5px !important;
+                        left: -2% !important;
+                        top: 10% !important;
+                    }
+                }
+                @media (max-width: 480px) {
+                    .hero-mockup-container {
+                        min-height: 420px !important;
+                        margin-top: 20px;
+                    }
+                    .mockup-front {
+                        width: 210px !important;
+                        height: 374px !important;
+                        border-radius: 22px !important;
+                        border-width: 5px !important;
+                    }
+                    .mockup-back {
+                        width: 190px !important;
+                        height: 335px !important;
+                        border-radius: 18px !important;
+                        border-width: 4px !important;
+                        left: 4% !important;
+                        top: 10% !important;
                     }
                 }
             `}</style>
