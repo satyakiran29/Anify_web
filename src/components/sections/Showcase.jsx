@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 // Import the key screenshots explaining the main features
-import imgWidgets from '../../assets/app screenshots/03-device-top.png'
-import imgFocusLock from '../../assets/app screenshots/07-device-top.png'
-import imgLifeCalendar from '../../assets/app screenshots/05-hero.png'
-import imgWallpapers from '../../assets/app screenshots/04-two-devices.png'
-import imgAutoChanger from '../../assets/app screenshots/06-device-bottom.png'
+import imgWidgets from '../../assets/app screenshots/03-device-top.webp'
+import imgFocusLock from '../../assets/app screenshots/07-device-top.webp'
+import imgLifeCalendar from '../../assets/app screenshots/05-hero.webp'
+import imgWallpapers from '../../assets/app screenshots/04-two-devices.webp'
+import imgAutoChanger from '../../assets/app screenshots/06-device-bottom.webp'
 
 const Showcase = () => {
     const [activeTab, setActiveTab] = useState(0)

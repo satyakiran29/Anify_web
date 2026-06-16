@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import screenshot1 from '../../assets/screenshots/Screenshot 2026-05-25 141125.png'
-import screenshot2 from '../../assets/screenshots/Screenshot 2026-05-25 141145.png'
+import screenshot1 from '../../assets/screenshots/Screenshot 2026-05-25 141125.webp'
+import screenshot2 from '../../assets/screenshots/Screenshot 2026-05-25 141145.webp'
 
 const Hero = () => {
     return (
