@@ -3,7 +3,7 @@ import { Routes, Route, useLocation } from 'react-router-dom'
 import Header from './components/layout/Header'
 import Hero from './components/sections/Hero'
 import Features from './components/sections/Features'
-import VideoGuide from './components/sections/VideoGuide'
+import Showcase from './components/sections/Showcase'
 import OtherApps from './components/sections/OtherApps'
 import Reviews from './components/sections/Reviews'
 import FAQ from './components/sections/FAQ'
@@ -22,7 +22,7 @@ function Home() {
       <SEO />
       <Hero />
       <Features />
-      <VideoGuide />
+      <Showcase />
       <OtherApps />
       <Reviews />
       <FAQ />

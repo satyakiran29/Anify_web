@@ -4,55 +4,59 @@ import { Link } from 'react-router-dom'
 const Footer = () => {
     return (
         <footer style={{
-            background: '#040405',
-            borderTop: '1px solid rgba(255,255,255,0.05)',
-            padding: '40px 24px',
-            position: 'relative'
+            background: '#040508',
+            borderTop: '1px solid var(--glass-border)',
+            padding: '50px 24px',
+            position: 'relative',
+            zIndex: 1
         }}>
             <div style={{
                 maxWidth: '1200px',
                 margin: '0 auto',
                 display: 'flex',
                 flexDirection: 'column',
-                gap: '24px',
+                gap: '28px',
                 alignItems: 'center'
             }}>
                 {/* Brand and Logo */}
                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
                     <img 
-                        src="https://play-lh.googleusercontent.com/jx1tzenU6YSJJuW8we6lg-0qqgjv9v-UnH6wBPyY1qXlqNRgzaoZGAaflLcaXMV7APcLRlhH6nz3g9BCf8idlKA=w240-h480-rw" 
+                        src="https://play-lh.googleusercontent.com/bPKAvR7DBW-HpogEDgSBBGsZ3rBpaX8ddP12EA54TIgmmenH7sFnT9xkNH5TjPvVXowfnLLOJnPzAbCb1u-T6Q=w480-h960-rw" 
                         alt="Anify Logo" 
                         style={{
                             width: '32px',
                             height: '32px',
                             borderRadius: '8px',
-                            objectFit: 'cover'
+                            objectFit: 'cover',
+                            border: '1px solid rgba(255,255,255,0.08)'
                         }} 
                     />
                     <span style={{ 
-                        fontSize: '1.2rem', 
+                        fontSize: '1.25rem', 
                         color: '#fff', 
-                        fontFamily: 'Inter, serif', 
-                        fontWeight: 800
+                        fontFamily: "'Plus Jakarta Sans', sans-serif", 
+                        fontWeight: 800,
+                        letterSpacing: '-0.3px'
                     }}>
                         Anify
                     </span>
                 </div>
 
-                {/* Links */}
+                {/* Footer Navigation Links */}
                 <div className="footer-links" style={{
                     display: 'flex',
                     gap: '24px',
                     flexWrap: 'wrap',
                     justifyContent: 'center',
-                    fontFamily: 'Inter, sans-serif'
+                    fontFamily: "'Plus Jakarta Sans', sans-serif"
                 }}>
                     <Link to="/privacy-policy">Privacy Policy</Link>
-                    <a href="https://t.me/anify_app" target="_blank" rel="noopener noreferrer">Telegram</a>
+                    <a href="https://t.me/skdev29" target="_blank" rel="noopener noreferrer">Telegram Community</a>
                     <a href="https://instagram.com/skdev29" target="_blank" rel="noopener noreferrer">Instagram</a>
+                    <a href="https://play.google.com/store/apps/dev?id=9166037782169864125" target="_blank" rel="noopener noreferrer">Google Play Developer Page</a>
                 </div>
 
-                {/* Copyright & Bottom Bar */}
+                {/* Copyright & Credits */}
                 <div style={{
                     display: 'flex',
                     flexDirection: 'column',
@@ -60,12 +64,12 @@ const Footer = () => {
                     gap: '8px',
                     color: '#64748b',
                     fontSize: '0.85rem',
-                    fontFamily: 'Inter, sans-serif',
+                    fontFamily: "'Plus Jakarta Sans', sans-serif",
                     marginTop: '8px'
                 }}>
                     <div>&copy; {new Date().getFullYear()} Anify. All rights reserved.</div>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                        <span>Developed by <a href="https://psatyakiran.in" target="_blank" rel="noopener noreferrer" style={{ color: '#fff', textDecoration: 'none', transition: 'color 0.2s ease', fontWeight: 500 }} onMouseOver={(e) => e.target.style.color = '#3b82f6'} onMouseOut={(e) => e.target.style.color = '#fff'}>Satya Kiran</a></span>
+                        <span>Developed by <a href="https://psatyakiran.in" target="_blank" rel="noopener noreferrer" style={{ color: '#fff', textDecoration: 'none', transition: 'color 0.2s ease', fontWeight: 600 }} className="dev-credit-link">Satya Kiran</a></span>
                     </div>
                 </div>
             </div>
@@ -76,10 +80,13 @@ const Footer = () => {
                     transition: color 0.2s ease;
                     text-decoration: none;
                     font-size: 0.9rem;
-                    font-weight: 500;
+                    font-weight: 600;
                 }
                 .footer-links a:hover {
-                    color: #fff;
+                    color: var(--accent-blue);
+                }
+                .dev-credit-link:hover {
+                    color: var(--accent-blue) !important;
                 }
             `}</style>
         </footer>
