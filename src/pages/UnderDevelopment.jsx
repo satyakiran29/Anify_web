@@ -48,6 +48,17 @@ const UnderDevelopment = () => {
         </Link>
       </div>
 
+      <div className="desktop-qr">
+        <p className="qr-text">Scan to install on your phone</p>
+        <div className="qr-box">
+          <img 
+            src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&color=000000&bgcolor=ffffff&data=https://play.google.com/store/apps/details?id=com.skdev.anify" 
+            alt="Download Anify QR Code" 
+            className="qr-img"
+          />
+        </div>
+      </div>
+
       <div className="maintenance-footer">
         Developed by <a href="https://skdev.psatyakiran.in/" target="_blank" rel="noopener noreferrer">Satya Kiran (SKDev)</a>
       </div>
@@ -145,6 +156,38 @@ const UnderDevelopment = () => {
           text-decoration: none;
           font-weight: 600;
         }
+        .desktop-qr {
+          margin-top: 48px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 12px;
+          animation: fadeInUp 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+          opacity: 0;
+        }
+        .qr-text {
+          color: var(--text-secondary);
+          font-size: 0.95rem;
+          font-weight: 600;
+          letter-spacing: 0.5px;
+          text-transform: uppercase;
+        }
+        .qr-box {
+          background: #ffffff;
+          padding: 12px;
+          border-radius: 16px;
+          box-shadow: 0 8px 32px rgba(0, 122, 255, 0.15);
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .qr-box:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 12px 40px rgba(0, 122, 255, 0.25);
+        }
+        .qr-img {
+          width: 120px;
+          height: 120px;
+          border-radius: 8px;
+        }
 
         /* Responsive Design */
         @media (max-width: 480px) {
@@ -177,6 +220,12 @@ const UnderDevelopment = () => {
           }
           .maintenance-footer {
             margin-top: 48px;
+          }
+        }
+        
+        @media (max-width: 768px) {
+          .desktop-qr {
+            display: none;
           }
         }
       `}</style>
