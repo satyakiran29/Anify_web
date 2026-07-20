@@ -69,7 +69,7 @@ const Footer = () => {
                 }}>
                     <div>&copy; {new Date().getFullYear()} Anify. All rights reserved.</div>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                        <span>Developed by <a href="https://psatyakiran.in" target="_blank" rel="noopener noreferrer" style={{ color: '#fff', textDecoration: 'none', transition: 'color 0.2s ease', fontWeight: 600 }} className="dev-credit-link">Satya Kiran</a></span>
+                        <span>Developed by <a href="https://skdev.psatyakiran.in/" target="_blank" rel="noopener noreferrer" style={{ color: '#fff', textDecoration: 'none', transition: 'color 0.2s ease', fontWeight: 600 }} className="dev-credit-link">Satya Kiran</a></span>
                     </div>
                 </div>
             </div>

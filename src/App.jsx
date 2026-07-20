@@ -33,7 +33,7 @@ function Home() {
 
 function App() {
   // Toggle this to turn Under Development mode on or off
-  const [isUnderDevelopment, setIsUnderDevelopment] = useState(false);
+  const [isUnderDevelopment, setIsUnderDevelopment] = useState(true);
   const location = useLocation();
 
   if (isUnderDevelopment && location.pathname !== '/privacy-policy') {
