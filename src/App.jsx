@@ -10,6 +10,7 @@ import FAQ from './components/sections/FAQ'
 import Community from './components/sections/Community'
 import Footer from './components/layout/Footer'
 import PrivacyPolicy from './pages/PrivacyPolicy'
+import KWGTRemove from './pages/KWGTRemove'
 import UnderDevelopment from './pages/UnderDevelopment'
 import Changelog from './pages/Changelog'
 import NotFound from './pages/NotFound'
@@ -36,7 +37,7 @@ function App() {
   const [isUnderDevelopment, setIsUnderDevelopment] = useState(true);
   const location = useLocation();
 
-  if (isUnderDevelopment && location.pathname !== '/privacy-policy') {
+  if (isUnderDevelopment && location.pathname !== '/privacy-policy' && location.pathname !== '/kwgtremove') {
     return <UnderDevelopment />;
   }
 
@@ -49,6 +50,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/changelog" element={<Changelog />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/kwgtremove" element={<KWGTRemove />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>

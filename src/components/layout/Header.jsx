@@ -20,7 +20,8 @@ const Header = () => {
         { name: "Screenshots", path: "/#screenshots" },
         { name: "Developer Apps", path: "/#other-apps" },
         { name: "Changelog", path: "/changelog" },
-        { name: "FAQ", path: "/#faq" }
+        { name: "FAQ", path: "/#faq" },
+        { name: "KWGT Removal", path: "/kwgtremove" }
     ]
 
     const handleNavClick = (path) => {

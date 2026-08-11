@@ -51,6 +51,7 @@ const Footer = () => {
                     fontFamily: "'Plus Jakarta Sans', sans-serif"
                 }}>
                     <Link to="/privacy-policy">Privacy Policy</Link>
+                    <Link to="/kwgtremove">KWGT Removal</Link>
                     <a href="https://t.me/skdev29" target="_blank" rel="noopener noreferrer">Telegram Community</a>
                     <a href="https://instagram.com/skdev29" target="_blank" rel="noopener noreferrer">Instagram</a>
                     <a href="https://play.google.com/store/apps/dev?id=9166037782169864125" target="_blank" rel="noopener noreferrer">Google Play Developer Page</a>

@@ -15,7 +15,7 @@ const UnderDevelopment = () => {
         Maintenance Mode
       </h1>
       <p className="maintenance-text">
-        We are currently undergoing maintenance to bring you a better experience. You can still download the app or read our privacy policy below.
+        We are currently undergoing maintenance to bring you a better experience. You can still download the app, read our privacy policy, or request KWGT widget removal below.
       </p>
 
       <div className="maintenance-actions">
@@ -45,6 +45,16 @@ const UnderDevelopment = () => {
             <polyline points="10 9 9 9 8 9"></polyline>
           </svg>
           Privacy Policy
+        </Link>
+
+        <Link
+          to="/kwgtremove"
+          className="maintenance-btn btn-secondary"
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+          KWGT Removal
         </Link>
       </div>
 
