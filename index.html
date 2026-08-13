@@ -57,6 +57,17 @@
         "description": "A feature-rich Android widget and personalization app bringing your home screen to life with standalone customizable widgets, system monitors, wallpapers, ringtones, and built-in focus locker."
       }
     </script>
+
+    <!-- OneSignal SDK -->
+    <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+    <script>
+      window.OneSignalDeferred = window.OneSignalDeferred || [];
+      OneSignalDeferred.push(async function(OneSignal) {
+        await OneSignal.init({
+          appId: "feb4aabb-7c69-4c3c-9642-880a9f23df62",
+        });
+      });
+    </script>
   </head>
   <body>
     <div id="root"></div>
